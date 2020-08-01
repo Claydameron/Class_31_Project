@@ -1,8 +1,12 @@
-var backgroundSprite;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+
+var particles = [];
+var plinkos = [];
+var divisions = [];
+var divisionsHeight = 300;
 
 
 function setup() {
@@ -11,18 +15,22 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  backgroundSprite = createSprite(240,400,460,780);
-  backgroundSprite.shapeColor = (0);
+  ground = new Ground(240,795,480,10);
 
-  ground = new Ground(240,400,460,10);
-  
+  /*for (var i = 0; i <= width; i = i + 80) {
+    divisions.push(new Division(i,height - divisionsHeight/2,10,divisionsHeight));
+  }*/
+
   Engine.run(engine);
 }
 
 function draw() {
-  background(149,234,243);  
+  //background(0,0,205);  
+  background(0);
 
   ground.display();
+
+
 
   drawSprites();
 }
