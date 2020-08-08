@@ -6,9 +6,9 @@ class Plinko{
             friction:0.5,
             density:1.2
         }
-        this.body = Bodies.circle(x, y,10,options);
-        this.height = 10;
-        this.width = 10;
+        this.body = Bodies.circle(x, y,15,options);
+        this.height = 15;
+        this.width = 15;
     
         World.add(world, this.body);
     }
@@ -17,7 +17,7 @@ class Plinko{
           push();
           translate(pos.x, pos.y);
           stroke("black");
-          fill("lightBlue");
+          fill("white");
           ellipseMode(CENTER);
           ellipse(0,0,this.width,this.height);
           pop();
