@@ -6,10 +6,10 @@ class Particle{
             friction:0.5,
             density:1.2
         }
-        this.body = Bodies.circle(x, y,5,options);
-        this.height = 10;
-        this.width = 10;
-        this.color = (random(0,255),random(0,255),random(0,255))
+        this.body = Bodies.circle(x, y,10,options);
+        this.height = 15;
+        this.width = 15;
+        this.color = (random(0,255),random(0,255),random(0,255));
         World.add(world, this.body);
     }
     display() {

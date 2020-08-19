@@ -10,7 +10,7 @@ var divisionsHeight = 300;
 
 
 function setup() {
-  createCanvas(480,800);
+  createCanvas(500,800);
 
   engine = Engine.create();
   world = engine.world;
@@ -21,7 +21,7 @@ function setup() {
     divisions.push(new Division(i,height - divisionsHeight/2,10,divisionsHeight));
   }
 
-  for(var j = 0; j <= width; j = j + 50) {
+  for(var j = 0; j <= width - 20; j = j + 50) {
     plinkos.push(new Plinko(j,75));
   }
 
@@ -37,9 +37,6 @@ function setup() {
     plinkos.push(new Plinko(j,375));
   }
 
-  if(frameCount % 60 === 0) {
-    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
-  }
 
   Engine.run(engine);
 }
@@ -50,6 +47,10 @@ function draw() {
 
   ground.display();
 
+  if(frameCount % 60 === 0) {
+    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
+  }
+
 for (var i = 0;i < divisions.length; i++) {
   divisions[i].display();
 }
@@ -58,8 +59,8 @@ for (var j = 0;j < plinkos.length; j++) {
   plinkos[j].display();
 }
 
-for (var k = 0; k < particles.lenght; k++) {
-  particles[k].display();
+for (var k = 0; k < particles.length; k++) { 
+  particles[k].display(); 
 }
 
 
