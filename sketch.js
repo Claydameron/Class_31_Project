@@ -10,7 +10,7 @@ var divisionsHeight = 300;
 
 
 function setup() {
-  createCanvas(500,800);
+  createCanvas(480,800);
 
   engine = Engine.create();
   world = engine.world;
